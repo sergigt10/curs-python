@@ -1,0 +1,120 @@
+** Python básico **
+# Para iniciar python en la terminal -> python
+# Para ejecutar un archivo js hacemos -> python archivo.js
+# ** -> hacemos el exponencial
+# list -> puede contener por ejemplo un mix de valores: string, number, bolean, list, ... Se inicia poniendo []. Para añadir valores en un list hacemos .append . La opción .pop elimina el último valor. Ej: ['Milk', 'Money', 'Milk']
+# input -> permite al usuario entrar información.
+# """ -> se utiliza para comentar el contenido de las funciones.
+# Las funciones se declaran con el siguiente nombre: ej.: nombre_de_la_funcion utilizando _
+# Separacion de dos líneas entre funciones.
+# global blockchain -> hacer variables globales.
+
+** Blockchain 1 **
+# Bitcoin es una criptomoneda y bitcoin esta basado en la tecnología blockchain. 
+# Blockchain es solamente una distribución de datos almacenados el qual estan conectados. Bloques conectados unos a otros. Cada bloque sabe sobre el bloque anterior donde forman una cadena. Y todo el conjunto es el blockchain. Cada bloque puede almacenar cualquier dato. Un bloque puede ser tratado com una carpeta que contiene información.
+
+** Loops y condiciones **
+# for -> for element in list: print(element)
+# while -> while true: print('Infinity!')
+# if y elif -> if/elseif
+# Podemos usar continue o break.
+# break -> finalizar el Loop
+# continue -> salta una iteración
+# is -> es lo mismo que decir ==
+# in -> si una valor esta dentro de un conjunto.
+# not -> es lo mismo que decir != se convina con in o if. not in/ if not
+# En python no hay switch-case en vez de esto usamos if-else
+# En python no existe este tipo de loop -> for(i = 0; i < 10; i++) pero tenemos el range(). Hace el for hasta un limite que se especifica en el range. Ej: for i in range(5,10) -> 5,6,7,8,9 | for i in range(5, 20, 2) -> 5,7,9,11,12,15,17,19
+# blockchain[block_index][0] -> [block_index] : núm. de lista "elemento" / [0] -> posición
+
+** Blockchain 2 **
+# Es una cadena de bloques y cada bloque es una simple colección de datos y meta datos.
+# Un bloque almacenara una lista de transacciones (el que envia la transacción, receptor y la cantidad), un hash y quizas un index.
+# Para generar una transacción usaremos un diccionario. Para la lista de transacciones usaremos una lista normal. Para un bloque usaremos un diccionario. Para la lista de bloques usaremos una lista normal. Y por último para generar la lista de participantes vamos a usar un set.
+# Minar un bloque significa añadir un bloque a la cadena de bloques actual.
+
+** Estructura de datos **
+# List -> ['Milk', 'Honey', 'Milk'] es mutable, ordenado, permite duplicados, solo permite almacenar un tipo de dato.
+# Set -> {'Milk', 'Honey'} es mutable (añadir o eliminar), no se ordena, no permite duplicados, solo permite almacenar un tipo de dato.
+# Tuple -> ('Milk', 'Honey') es immutable, ordenado, duplicados, permite valores mixtos.
+# Dictionary -> {'name': 'Milk', 'n': 2} mutables, no esta ordenado, no keys duplicadas, contenido mixto.
+# List comprehensions -> ej: simple_list = [1, 2, 3, 4] double_list = [] . double_list = [el * 2 for el in simple_list] -> [2, 4, 6, 8]. Tambien se puede hacer con el dicitionary.
+# List comprehensions con if -> [el * 2 for el in simple_list if el % 2 == 0] -> [4, 8]
+# enumerate -> convierte una lista en un index y su valor : (index, valor).
+# open_transactions[:] -> [:] copia toda una lista no sólo su referencia sino los valores. Copia range selector -> list[0:3] copia los tres primeros. Esto funciona con list y tuple. 
+# .extend() -> añadimos elemento a una lista.
+# .items() -> convierte un diccionario a una tupla.
+# del() -> elimina un elemento de una lista o diccionario.
+# all y any -> all permite comprovar si todos los valores de una lista cumplen un requisito, en cambio any comprueva si algun valor cumple el requisito.
+
+** Functions and Strings **
+# Para crear una función usamos def _nombre_funcion_:
+# Los strings en python son inmutables.
+# .format() -> permite añadir valores en los {}. Ej: 'I am {} and I am {} years old.'.format('Max', '29') : I am Max and I am 29 years old.
+# {:f} -> formatea el valor de un number. {:10.1f} -> añade 10 espacios y formatea el valor con un decimal.
+# 'I\'m Max' -> La \ permite añadir el apóstrofe de I'm sin que de un error el string.
+# f'dasdasd dsad' -> formatea un string
+# .map() -> recibe dos paràmetros. El primer parámetro afectara al segundo parámetro que sera una lista. 
+# lambda -> permite reducir una función simple. Ej: si tenemos la función def multiply(el): return el * 2 , se puede reducir de la siguiente manera: lambda el: el * 2 . Hace lo mismo que la función inicial pero de forma reducida.
+# functools.reduce -> tiene dos parámetros: valor actual y último resultado. Se comporta como un for y devuelve un solo resultado.
+# *args -> convierte los argumentos a una tupla.
+# **keyword_args -> convierte los argumentos a un diccionario.
+
+** Library **
+# Podemos acceder a librerías usando import _nombre_libreria_ .
+# functools -> librería para usar reduce() .
+# hashlib -> crear un hash a partir de un string.
+# json -> crear objeto json.
+# Podemos añadir alías (as) -> import random as rn
+# from _nombre_libreria import _elementos_de_la_libreria_importar -> con esto podemos importar partes de una libreria o importar otro archivo python.
+# Proof of work (PoW) -> Este protocolo funciona bajo el concepto de requerir un trabajo al cliente, que luego es verificado por la red. Normalmente el trabajo solicitado, consiste en realizar complejas operaciones de cómputo.
+https://www.binance.vision/blockchain/proof-of-work-explained . Por ejemplo obtener un hash que comienze por 00 para crear un nuevo block y añadirlo en el blockchain.
+# OrderedDict -> recuerda el orden en que fue insertado en el diccionario.
+
+** Files **
+# open() -> iniciamos la lectura de un fichero. Tiene distintos modos: r -> leer, w -> escribir, r+ -> leer y escribir, x -> escribir pero falla si el archivo existe, a -> escribir y añade al final de un archivo, b -> abre en modo binario para escribir datos binarios.
+# write() -> escribir en un fichero.
+# read() -> lee de un fichero.
+# readline() -> lee una línea de un fichero.
+# readlines() -> lee y devuelve una lista del contenido.
+# close() -> guarda todos los canvios y cierra fichero.
+# \n -> salto de línea.
+# with -> cierra por nosotros el fichero no hace falta el close().  Todo lo que esta dentro de with se ejecuta.
+# Pickle -> convierte datos de python a datos binarios y los guarda en un archivo. 
+
+** Errors **
+# try: except IOError: -> para gestionar un error.
+
+** OOP **
+# Una clase es como una plantilla para crear objetos.
+# Instancia -> Un objeto se crea usando el constructor de una clase. Una vez que el objeto es creado se le conoce como una instancia de la clase.
+# Escribir los nombres de las clases con la primera palabra en mayúscula.
+# self para acceder a métodos y atributos. Siempre lo tenemos que implementar para acceder a estos en todas las funciones.
+# Todas las instancias comparten el mismo atributo. Por lo tanto si en una instancia cambiamos el valor de un atributo este cambio afectará al resto de instancias creadas.
+# Para evitar esto usamos el constructor.
+# def __init__ -> definir un constructor.
+# car1.__dict__ -> imprime una instancia de una clase como si fuera un diccionario.
+# def __repr__ -> Lo mismo que antes pero con una función permite imprimir el contenido de una instancia, junto con print.
+# __str__() -> convierte a un string.
+# __warnings -> añadir __ indica que el atributo es privado. Sólo se pueden acceder desde la clase.
+# super() -> nos da acceso a la clase que heredamos.
+# super().__init__(starting_top_speed) -> heredamos del constructor padre.
+# métodos de instancia -> Un método que tenga como parámetro self se conoce como métodos de instancia. Quiere decir que un un objeto los puede llamar.
+# @classmethod -> los métodos de clase pertenecen a la clase y no a la instáncia. Pueden ser llamados sin crear una instancia de la clase. En vez de self utilizamos cls. Los métodos de clase pueden acceder a los atributos o los métodos de las clases que estamos heredando. En cambio el método estático no.
+# @staticmethod -> los métodos estáticos pertenecen a la clase y no a la instáncia. Sólo lo usamos cuando algo pertenezca solo a la clase. Nunca puede devolver un objeto y no tiene acceso a las funciones o métodos exteriores que se encuentran en la classe en cambio método clase si que lo permite.
+# Decorators (@something) -> altera el comportamiento de una función.
+# @property -> permite crear getter y setters. Y que la variable sea privada. Para controlar lo que sea puede leer o escrivir.
+# __init__.py -> para crear un paquete.
+# __all__ -> indicamos que podemos importar.
+# __name__ -> permite saber si el archivo es importado o es el archivo principal del programa. Indica en que contexto estamos.
+# pip -> es el python package manager para instalar paquetes. 
+# pip install pycrypto -> para trabajar con criptografía de llaves.
+# Virtual Environments -> te permite instalar paquetes solo en el proyecto que estas trabajando.
+
+** Flask **
+# Crear aplicaciones web.
+# Instalar flask y CORS.
+# @app.route -> crear endpoints.
+# jsonify -> convierte datos a json.
+# request -> para extraer datos que enviamos al servidor.
+
